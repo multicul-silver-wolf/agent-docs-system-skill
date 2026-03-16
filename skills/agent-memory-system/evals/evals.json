@@ -1,0 +1,23 @@
+{
+  "skill_name": "product-ship-system",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to build a Next.js SaaS that auto-generates investor updates from Stripe and product analytics data. Please take this from idea to deployment.",
+      "expected_output": "Agent triggers full phase workflow, creates persisted project docs, defines measurable MVP and ship plan.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Build this and ship it fast: an AI tool for freelancers to create proposal drafts. Keep it simple.",
+      "expected_output": "Skill still runs compressed Discover+Define, avoids immediate coding, and enforces gates + DoD.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I already have a half-built Next.js app. Help me validate if users actually want this and then launch safely.",
+      "expected_output": "Skill adapts to existing app context, runs Validate/Ship/Iterate with evidence and risk controls.",
+      "files": []
+    }
+  ]
+}

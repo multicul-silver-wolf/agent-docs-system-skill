@@ -1,14 +1,12 @@
-# Agent Memory System Skill
+# Product Ship System (Next.js)
 
-> **"If it's not in the memory files, the agent didn't learn it."** 👾
+> **"Turn product intent into shipped outcomes with a persistent project brain."** 👾
 
-This repository contains a specialized skill for AI agents (Claude Code, OpenClaw, Codex) designed to build and maintain a structured, long-term project memory system.
+This repository contains the **Product Ship System**, a production-grade skill for AI agents (Claude Code, OpenClaw, Codex) designed to manage the end-to-end lifecycle of building and shipping user-loved products.
 
 ## 🚀 Why?
 
-AI agents are powerful but often suffer from "context amnesia" once a session ends or the context window overflows. This skill fixes that by enforcing a **Persistent Project Brain** protocol.
-
-It moves project state from volatile LLM context to a permanent, human-readable, and agent-queryable filesystem structure.
+Most AI agents can write code, but they struggle to **ship products**. This skill enforces a rigorous, multi-phase operating system that ensures every decision, mission objective, and technical specification is captured in a structured filesystem that survives session restarts.
 
 ## 📦 Installation
 
@@ -23,36 +21,47 @@ git clone https://github.com/multicul-silver-wolf/agent-memory-system-skill
 openclaw install ./agent-memory-system-skill/skills/agent-memory-system
 ```
 
-## 📂 Memory Structure
+## 🧠 Core Methodology
 
-When activated, the agent will maintain the following artifacts in `projects/<project-slug>/`:
+The system operates in 7 distinct phases, each with its own Definition of Done (DoD) and artifacts:
 
-| File | Purpose |
-| :--- | :--- |
-| `00-mission.md` | Core objectives, high-level goals, and kill criteria. |
-| `01-decisions.md` | **Append-only log** of every major technical and product decision. |
-| `02-mvp-spec.md` | Strict definition of the MVP scope. |
-| `03-design.md` | User flows, wireframes, and UI/UX logic. |
-| `04-build-log.md` | Implementation progress and technical blockers. |
-| `05-validate-report.md` | Verification results and Definition of Done (DoD) checks. |
-| `06-ship-report.md` | Release notes, deployment IDs, and rollback plans. |
-| `07-iteration-log.md` | Post-launch feedback and data-driven learning. |
+1. **Discover**: Problem validation and ICP check.
+2. **Define**: MVP scoping and success metrics.
+3. **Design**: User flow mapping and conversion copy.
+4. **Build**: Next.js full-stack implementation.
+5. **Validate**: Pre-ship checklists and quality gates.
+6. **Ship**: Production deployment and release report.
+7. **Iterate**: Post-launch feedback and learning loops.
+
+## 📂 Memory Artifacts
+
+All project state is persisted in `projects/<project-slug>/`:
+
+| File | Phase | Purpose |
+| :--- | :--- | :--- |
+| `00-mission.md` | Discover | High-level goals and kill criteria. |
+| `01-decisions.md` | All | **Append-only log** of every major decision. |
+| `02-mvp-spec.md` | Define | Strict MVP scope definition. |
+| `03-design.md` | Design | Experience and UI/UX logic. |
+| `04-build-log.md` | Build | Implementation progress and blockers. |
+| `05-validate-report.md` | Validate | Verification and quality gate results. |
+| `06-ship-report.md` | Ship | Release notes and rollback plans. |
+| `07-iteration-log.md` | Iterate | Qualitative feedback and metrics. |
 
 ## 🛠 Usage
 
 Once installed, you can trigger the system by saying:
 
-- *"Initialize the memory system for my new project [Project Name]"*
-- *"Record our decision to use Supabase in the decision log"*
-- *"Update the MVP spec based on our latest discussion"*
-- *"Review the project memory and tell me why we chose X"*
+- *"Build this and ship it: [Idea]"*
+- *"I want to launch a product users love."*
+- *"Initialize the Product Ship System for [Project Name]"*
 
 ## ✨ Features
 
-- **Cross-Session Continuity**: Agents "wake up" with full project context.
-- **High Agency Execution**: Structured goals lead to deterministic outcomes.
-- **Human-Readable Audit Trail**: You can see exactly how and why decisions were made.
-- **AI Agent Friendly**: Optimized for machines to parse, search, and update.
+- **Cross-Session Continuity**: The agent never forgets a decision or goal.
+- **Phase Gates**: Prevents "blind building" without validation.
+- **Next.js Optimized**: Built-in standards for the modern web stack.
+- **AI Agent Friendly**: Optimized for machines to parse and update.
 
 ---
 

@@ -1,12 +1,12 @@
-# Product Ship System (Next.js)
+# Project Memory System Skill
 
-> **"Turn product intent into shipped outcomes with a persistent project brain."** 👾
+> **"Build and maintain a layered memory system for durable project knowledge."** 👾
 
-This repository contains the **Product Ship System**, a production-grade skill for AI agents (Claude Code, OpenClaw, Codex) designed to manage the end-to-end lifecycle of building and shipping user-loved products.
+This repository contains a specialized skill for AI agents (Claude Code, OpenClaw, Codex) designed to bootstrap, audit, or maintain a repository-specific project memory system centered on `AGENTS.md`, `MEMORY.md`, and `.memory/*.md`.
 
 ## 🚀 Why?
 
-Most AI agents can write code, but they struggle to **ship products**. This skill enforces a rigorous, multi-phase operating system that ensures every decision, mission objective, and technical specification is captured in a structured filesystem that survives session restarts.
+Durable project knowledge often gets lost in long chat threads. This skill enforces a structured approach to saving "what we learned" directly into the repository, ensuring that future agent sessions can pick up exactly where we left off.
 
 ## 📦 Installation
 
@@ -14,54 +14,30 @@ Install this skill into your agent environment (OpenClaw or Claude Code):
 
 ```bash
 # Using openclaw
-openclaw install https://github.com/multicul-silver-wolf/agent-memory-system-skill/skills/agent-memory-system
+openclaw install https://github.com/multicul-silver-wolf/agent-memory-system-skill/skills/project-memory-system
 
 # Or clone and install locally
 git clone https://github.com/multicul-silver-wolf/agent-memory-system-skill
-openclaw install ./agent-memory-system-skill/skills/agent-memory-system
+openclaw install ./agent-memory-system-skill/skills/project-memory-system
 ```
 
-## 🧠 Core Methodology
+## 📂 System Architecture
 
-The system operates in 7 distinct phases, each with its own Definition of Done (DoD) and artifacts:
+The system uses a canonical file set to separate cross-domain knowledge from module-specific details:
 
-1. **Discover**: Problem validation and ICP check.
-2. **Define**: MVP scoping and success metrics.
-3. **Design**: User flow mapping and conversion copy.
-4. **Build**: Next.js full-stack implementation.
-5. **Validate**: Pre-ship checklists and quality gates.
-6. **Ship**: Production deployment and release report.
-7. **Iterate**: Post-launch feedback and learning loops.
-
-## 📂 Memory Artifacts
-
-All project state is persisted in `projects/<project-slug>/`:
-
-| File | Phase | Purpose |
-| :--- | :--- | :--- |
-| `00-mission.md` | Discover | High-level goals and kill criteria. |
-| `01-decisions.md` | All | **Append-only log** of every major decision. |
-| `02-mvp-spec.md` | Define | Strict MVP scope definition. |
-| `03-design.md` | Design | Experience and UI/UX logic. |
-| `04-build-log.md` | Build | Implementation progress and blockers. |
-| `05-validate-report.md` | Validate | Verification and quality gate results. |
-| `06-ship-report.md` | Ship | Release notes and rollback plans. |
-| `07-iteration-log.md` | Iterate | Qualitative feedback and metrics. |
+- **`AGENTS.md`**: The entry point for agents. Links to the memory system.
+- **`MEMORY.md`**: Durable, cross-domain conventions and recurring user preferences.
+- **`.memory/index.md`**: The map for domain-specific memory files.
+- **`.memory/<domain>.md`**: Stable knowledge that only applies to one module, route, or feature.
 
 ## 🛠 Usage
 
-Once installed, you can trigger the system by saying:
+Trigger the skill in your chat:
 
-- *"Build this and ship it: [Idea]"*
-- *"I want to launch a product users love."*
-- *"Initialize the Product Ship System for [Project Name]"*
-
-## ✨ Features
-
-- **Cross-Session Continuity**: The agent never forgets a decision or goal.
-- **Phase Gates**: Prevents "blind building" without validation.
-- **Next.js Optimized**: Built-in standards for the modern web stack.
-- **AI Agent Friendly**: Optimized for machines to parse and update.
+- *"Bootstrap the project memory system in this repo"*
+- *"Update the memory for the 'api' domain with our new auth pattern"*
+- *"Audit our current memory files and link them in AGENTS.md"*
+- *"Check the project memory to see why we chose this architecture"*
 
 ---
 

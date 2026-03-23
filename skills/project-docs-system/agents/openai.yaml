@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docs Maintainer"
+  short_description: "Scan repo and keep project docs current"
+  default_prompt: "Use $project-docs-system to scan relevant parts of the repository, update outdated records in `.docs/`, and capture durable project habits and preferences in the correct docs files and index maps."

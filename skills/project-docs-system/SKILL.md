@@ -31,11 +31,13 @@ Build and maintain a layered docs system so future work can reuse durable projec
 
 ```md
 <!-- BEGIN:docs-system-rules -->
-# This is NOT the docs you remember
+# Project Docs System (Read First)
 
-This repository uses a project docs system with a two-level map under `.docs/`.
-Read `.docs/index.md` and the relevant `.docs/<domain>/index.md` before writing or updating docs.
-If `.docs/` is not initialized yet, initialize it first, then add this rules block.
+This repository maintains project-specific knowledge and conventions in `.docs/`.
+Start with `.docs/index.md` and `.docs/DOCS.md`, then follow links into `.docs/<domain>/index.md` and `.docs/<domain>/<subdomain>.md` as needed.
+
+Use this system to capture durable, non-obvious practices that are not guaranteed by model pretraining or obvious from code.
+When the user gives a stable correction or you discover a reusable project rule, update the relevant `.docs/` file and matching `index.md` in the same change.
 <!-- END:docs-system-rules -->
 ```
 

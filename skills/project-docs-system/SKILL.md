@@ -1,6 +1,6 @@
 ---
 name: project-docs-system
-description: Bootstrap, audit, or maintain a repository-specific project docs system centered on `AGENTS.md` and `.docs/` (including `.docs/DOCS.md`, `.docs/index.md`, `.docs/<domain>/index.md`, and `.docs/<domain>/<subdomain>.md`). Use when Codex needs to initialize docs files in a repo, add or update cross-domain rules, maintain two-level docs maps, or sync AGENTS.md docs-system rules.
+description: Bootstrap, audit, or maintain a repository-specific project docs system centered on `AGENTS.md` and `.docs/` (including `.docs/DOCS.md`, `.docs/index.md`, `.docs/<domain>/index.md`, and `.docs/<domain>/<subdomain>.md`). Use for any agent (such as Codex, Claude Code, and OpenClaw) when it needs to initialize docs files, maintain two-level docs maps, add or update project conventions, capture durable non-obvious practices, or sync AGENTS.md docs-system rules.
 ---
 
 # Project Docs System

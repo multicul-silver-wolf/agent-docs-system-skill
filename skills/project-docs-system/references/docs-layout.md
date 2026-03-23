@@ -25,11 +25,7 @@ When `.docs/` is initialized, ensure `AGENTS.md` includes this exact block:
 <!-- BEGIN:docs-system-rules -->
 # Project Docs System (Read First)
 
-This repository maintains project-specific knowledge and conventions in `.docs/`.
-Start with `.docs/index.md` and `.docs/DOCS.md`, then follow links into `.docs/<domain>/index.md` and `.docs/<domain>/<subdomain>.md` as needed.
-
-Use this system to capture durable, non-obvious practices that are not guaranteed by model pretraining or obvious from code.
-When the user gives a stable correction or you discover a reusable project rule, update the relevant `.docs/` file and matching `index.md` in the same change.
+This repository maintains project-specific knowledge and conventions in `.docs/`; start with `.docs/index.md` and `.docs/DOCS.md`, then follow links into `.docs/<domain>/index.md` and `.docs/<domain>/<subdomain>.md` as needed, treat `.docs/` as the source of durable non-obvious project practices, and follow [`skills/project-docs-system/SKILL.md`](skills/project-docs-system/SKILL.md) for how to initialize, maintain, and update this docs system.
 <!-- END:docs-system-rules -->
 ```
 

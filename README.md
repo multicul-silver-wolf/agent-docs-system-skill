@@ -13,7 +13,7 @@ Durable project knowledge often gets lost in long chat threads. This skill enfor
 Install this skill into your agent environment (Claude Code, OpenClaw, or Codex):
 
 ```bash
-# Using npx skills (Recommended for Claude Code)
+# Using npx skills (Recommended)
 npx skills add multicul-silver-wolf/agent-docs-system-skill/skills/project-docs-system
 
 # Using openclaw

@@ -11,12 +11,19 @@ updateAt: 2026-03-24
 - Copy this structure when creating a new `docs/<domain>/<subdomain>.md` file.
 - Replace placeholder wording with concrete, durable project knowledge.
 - Keep the scope limited to one subdomain, module surface, workflow, or route cluster.
+- Delete the `Domain Language` section when no confirmed project-specific terms are needed.
 - Move cross-domain knowledge up into `docs/DOCS.md`.
 
 ## Scope
 
 - Describe exactly what this doc file covers.
 - Name the main files, directories, routes, APIs, or runtime surfaces involved.
+
+## Domain Language
+
+- **Term**: One-sentence definition.
+  _Avoid_: ambiguous or rejected names
+  Related: **OtherTerm**
 
 ## Current Subdomain Docs
 

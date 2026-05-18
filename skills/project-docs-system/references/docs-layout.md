@@ -9,7 +9,8 @@ Use this layout when bootstrapping or repairing a project docs system:
   - If `docs/` is initialized, include the docs-system rules block.
   - If `docs/` is not initialized, defer adding the block.
 - `docs/DOCS.md`
-  - Store cross-domain, durable docs.
+  - Act as the repository knowledge protocol.
+  - Store cross-domain language, collaboration conventions, and boundary principles.
 - `docs/index.md`
   - Act as the map for first-level domains.
 - `docs/<domain>/index.md`
@@ -47,16 +48,38 @@ updateAt: 2026-03-24
 
 Store:
 
-- durable project-wide terminology
-- cross-domain conventions
+- durable cross-domain terminology and confirmed meanings
+- collaboration conventions that affect multiple domains
+- boundary principles for ownership, responsibility, or placement
 - recurring user preferences that affect many tasks
 - architectural expectations that show up repeatedly
 
 Avoid:
 
 - domain-specific implementation notes
+- unconfirmed or speculative terminology
 - temporary debugging observations
 - one-off task status
+
+Use this default structure when bootstrapping:
+
+```md
+# Project Knowledge Protocol
+
+## Domain Language
+
+- **Term**: One-sentence definition.
+  _Avoid_: ambiguous or rejected names
+  Related: **OtherTerm**
+
+## Collaboration Conventions
+
+- Durable project-wide conventions that affect multiple domains.
+
+## Boundary Principles
+
+- Cross-domain ownership, responsibility, or placement rules.
+```
 
 ### `docs/index.md`
 
@@ -78,6 +101,7 @@ Include:
 
 Store:
 
+- optional `## Domain Language` terms needed to understand this doc
 - subdomain-specific conventions
 - ownership boundaries
 - stable file or route relationships
@@ -95,6 +119,7 @@ Prefer one clear subdomain per file, such as:
 Use this decision rule before writing:
 
 - If knowledge should apply across the repository, put it in `docs/DOCS.md`.
+- If a confirmed project-specific term is needed in one docs file, put it in that file's optional `## Domain Language` section.
 - If it maps first-level navigation, put it in `docs/index.md`.
 - If it maps second-level navigation, put it in `docs/<domain>/index.md`.
 - If it only matters for one subdomain, put it in `docs/<domain>/<subdomain>.md`.

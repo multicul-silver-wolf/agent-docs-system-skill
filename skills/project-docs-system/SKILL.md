@@ -9,7 +9,7 @@ Build and maintain a layered docs system so future work can reuse durable projec
 
 ## Design Philosophy
 
-This docs system borrows from Domain-Driven Design: organize durable knowledge around project domains and bounded contexts, keep shared vocabulary explicit, and place each convention where its scope belongs. `docs/DOCS.md` holds cross-domain language and rules, index files act as a context map, and leaf docs capture stable knowledge inside one focused subdomain. Do not force tactical DDD patterns into the docs unless the project itself uses them.
+This docs system borrows from Domain-Driven Design: organize durable knowledge around project domains and bounded contexts, keep shared vocabulary explicit, and place each convention where its scope belongs. `docs/DOCS.md` is the repository knowledge protocol for cross-domain language, collaboration conventions, and boundary principles; index files act as a context map, and leaf docs capture stable knowledge inside one focused subdomain. Do not force tactical DDD patterns into the docs unless the project itself uses them.
 
 ## Follow This Workflow
 
@@ -25,9 +25,10 @@ This docs system borrows from Domain-Driven Design: organize durable knowledge a
    - When creating a new leaf doc, copy the structure in [references/subdomain-doc-template.md](./references/subdomain-doc-template.md).
 
 3. Sort knowledge before writing.
-   - Put cross-domain, durable knowledge in `docs/DOCS.md`.
+   - Put cross-domain language, collaboration conventions, and boundary principles in `docs/DOCS.md`.
    - Put domain navigation in `docs/<domain>/index.md`.
    - Put stable subdomain knowledge in `docs/<domain>/<subdomain>.md`.
+   - Add a `## Domain Language` section only when a docs file depends on confirmed project-specific terms.
    - Do not store short-lived debugging notes or one-off session details.
 
 4. Keep `AGENTS.md` as the entry point.
@@ -57,6 +58,7 @@ This repository maintains project-specific knowledge and conventions in `docs/`;
 - Preserve the repository's chosen freshness key if one already exists.
 - When bootstrapping a new system from scratch, use the frontmatter keys in [references/docs-layout.md](./references/docs-layout.md).
 - Keep docs files scoped and stable; move repeated cross-domain knowledge up into `docs/DOCS.md`.
+- Keep `## Domain Language` short: use one-sentence definitions, optional `_Avoid_: ...`, and optional `Related: ...`; skip the section when no confirmed terms are needed.
 - Reference concrete files, routes, or modules when that makes the docs more reusable.
 
 ## Final Check

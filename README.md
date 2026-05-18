@@ -29,10 +29,10 @@ openclaw install ./agent-docs-system-skill/skills/project-docs-system
 The docs system uses a two-level domain structure with index maps at each folder level:
 
 - **`AGENTS.md`**: Agent entry point. Adds docs-system rules only after `docs/` is initialized.
-- **`docs/DOCS.md`**: Cross-domain durable conventions and recurring preferences.
+- **`docs/DOCS.md`**: Repository knowledge protocol for cross-domain language, collaboration conventions, and boundary principles.
 - **`docs/index.md`**: Top-level map of first-level domains.
 - **`docs/<domain>/index.md`**: Map of second-level docs inside one domain.
-- **`docs/<domain>/<subdomain>.md`**: Durable docs for one subdomain.
+- **`docs/<domain>/<subdomain>.md`**: Durable docs for one subdomain, with an optional `Domain Language` section for confirmed local terms.
 
 ## Usage
 

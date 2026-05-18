@@ -1,6 +1,6 @@
 ---
 title: Subdomain Doc Template
-description: Reference template for creating a subdomain doc file under .docs/<domain>/.
+description: Reference template for creating a subdomain doc file under docs/<domain>/.
 updateAt: 2026-03-24
 ---
 
@@ -8,10 +8,10 @@ updateAt: 2026-03-24
 
 ## How To Use
 
-- Copy this structure when creating a new `.docs/<domain>/<subdomain>.md` file.
+- Copy this structure when creating a new `docs/<domain>/<subdomain>.md` file.
 - Replace placeholder wording with concrete, durable project knowledge.
 - Keep the scope limited to one subdomain, module surface, workflow, or route cluster.
-- Move cross-domain knowledge up into `.docs/DOCS.md`.
+- Move cross-domain knowledge up into `docs/DOCS.md`.
 
 ## Scope
 

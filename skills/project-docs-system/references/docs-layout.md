@@ -6,26 +6,26 @@ Use this layout when bootstrapping or repairing a project docs system:
 
 - `AGENTS.md`
   - Keep this as the agent entry point.
-  - If `.docs/` is initialized, include the docs-system rules block.
-  - If `.docs/` is not initialized, defer adding the block.
-- `.docs/DOCS.md`
+  - If `docs/` is initialized, include the docs-system rules block.
+  - If `docs/` is not initialized, defer adding the block.
+- `docs/DOCS.md`
   - Store cross-domain, durable docs.
-- `.docs/index.md`
+- `docs/index.md`
   - Act as the map for first-level domains.
-- `.docs/<domain>/index.md`
+- `docs/<domain>/index.md`
   - Act as the map for second-level docs in one domain.
-- `.docs/<domain>/<subdomain>.md`
+- `docs/<domain>/<subdomain>.md`
   - Store durable knowledge that only applies to one subdomain.
 
 ## AGENTS Rules Block
 
-When `.docs/` is initialized, ensure `AGENTS.md` includes this exact block:
+When `docs/` is initialized, ensure `AGENTS.md` includes this exact block:
 
 ```md
 <!-- BEGIN:docs-system-rules -->
 # This is NOT the docs system you know
 
-This repository maintains project-specific knowledge and conventions in `.docs/`; start with `.docs/index.md` and `.docs/DOCS.md`, then follow links into `.docs/<domain>/index.md` and `.docs/<domain>/<subdomain>.md` as needed, treat `.docs/` as the source of durable non-obvious project practices, and follow [`skills/project-docs-system/SKILL.md`](skills/project-docs-system/SKILL.md) for how to initialize, maintain, and update this docs system.
+This repository maintains project-specific knowledge and conventions in `docs/`; start with `docs/index.md` and `docs/DOCS.md`, then follow links into `docs/<domain>/index.md` and `docs/<domain>/<subdomain>.md` as needed, treat `docs/` as the source of durable non-obvious project practices, and follow [`skills/project-docs-system/SKILL.md`](skills/project-docs-system/SKILL.md) for how to initialize, maintain, and update this docs system.
 <!-- END:docs-system-rules -->
 ```
 
@@ -43,7 +43,7 @@ updateAt: 2026-03-24
 
 ## File Roles
 
-### `.docs/DOCS.md`
+### `docs/DOCS.md`
 
 Store:
 
@@ -58,7 +58,7 @@ Avoid:
 - temporary debugging observations
 - one-off task status
 
-### `.docs/index.md`
+### `docs/index.md`
 
 Include:
 
@@ -66,15 +66,15 @@ Include:
 - one entry per first-level domain
 - when to consult each domain
 
-### `.docs/<domain>/index.md`
+### `docs/<domain>/index.md`
 
 Include:
 
 - a short usage note for that domain
-- one entry per `.docs/<domain>/<subdomain>.md`
+- one entry per `docs/<domain>/<subdomain>.md`
 - when to consult each subdomain doc
 
-### `.docs/<domain>/<subdomain>.md`
+### `docs/<domain>/<subdomain>.md`
 
 Store:
 
@@ -85,19 +85,19 @@ Store:
 
 Prefer one clear subdomain per file, such as:
 
-- `.docs/frontend/routing.md`
-- `.docs/frontend/data-fetching.md`
-- `.docs/backend/api-contracts.md`
-- `.docs/backend/auth-flow.md`
+- `docs/frontend/routing.md`
+- `docs/frontend/data-fetching.md`
+- `docs/backend/api-contracts.md`
+- `docs/backend/auth-flow.md`
 
 ## Placement Rules
 
 Use this decision rule before writing:
 
-- If knowledge should apply across the repository, put it in `.docs/DOCS.md`.
-- If it maps first-level navigation, put it in `.docs/index.md`.
-- If it maps second-level navigation, put it in `.docs/<domain>/index.md`.
-- If it only matters for one subdomain, put it in `.docs/<domain>/<subdomain>.md`.
+- If knowledge should apply across the repository, put it in `docs/DOCS.md`.
+- If it maps first-level navigation, put it in `docs/index.md`.
+- If it maps second-level navigation, put it in `docs/<domain>/index.md`.
+- If it only matters for one subdomain, put it in `docs/<domain>/<subdomain>.md`.
 - If it is too temporary to help future work, do not store it.
 
 ## Update Triggers
@@ -111,5 +111,5 @@ Update the relevant docs file when:
 
 Also update map files whenever docs files change:
 
-- Update `.docs/<domain>/index.md` when its subdomain files change.
-- Update `.docs/index.md` when first-level domains change.
+- Update `docs/<domain>/index.md` when its subdomain files change.
+- Update `docs/index.md` when first-level domains change.

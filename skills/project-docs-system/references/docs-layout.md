@@ -20,13 +20,13 @@ Use this layout when bootstrapping or repairing a project docs system:
 
 ## AGENTS Rules Block
 
-When `docs/` is initialized, ensure `AGENTS.md` includes this exact block:
+Treat `docs/` as initialized only when compatible `docs/DOCS.md` (Project Knowledge Protocol) and `docs/index.md` files exist. When initialized, ensure `AGENTS.md` includes this exact block:
 
 ```md
 <!-- BEGIN:docs-system-rules -->
 # This is NOT the docs system you know
 
-This repository maintains project-specific knowledge and conventions in `docs/`; start with `docs/index.md` and `docs/DOCS.md`, then follow links into `docs/<domain>/index.md` and `docs/<domain>/<subdomain>.md` as needed, treat `docs/` as the source of durable non-obvious project practices, and follow [`skills/project-docs-system/SKILL.md`](skills/project-docs-system/SKILL.md) for how to initialize, maintain, and update this docs system.
+This repository maintains project-specific knowledge and conventions in `docs/`; start with `docs/index.md` and `docs/DOCS.md`, then follow links into `docs/<domain>/index.md` and `docs/<domain>/<subdomain>.md` as needed, treat `docs/` as the source of durable non-obvious project practices, and use the installed `$project-docs-system` skill when initializing, maintaining, or updating this docs system.
 <!-- END:docs-system-rules -->
 ```
 
@@ -89,6 +89,16 @@ Include:
 - one entry per first-level domain
 - when to consult each domain
 
+Use this minimal map template:
+
+```md
+# Docs Index
+
+## Domains
+
+- [Domain Name](./domain/index.md): When to consult this domain.
+```
+
 ### `docs/<domain>/index.md`
 
 Include:
@@ -96,6 +106,16 @@ Include:
 - a short usage note for that domain
 - one entry per `docs/<domain>/<subdomain>.md`
 - when to consult each subdomain doc
+
+Use this minimal map template:
+
+```md
+# Domain Name
+
+## Subdomains
+
+- [Subdomain Name](./subdomain.md): When to consult this doc.
+```
 
 ### `docs/<domain>/<subdomain>.md`
 

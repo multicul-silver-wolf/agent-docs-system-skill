@@ -16,6 +16,7 @@ This docs system borrows from Domain-Driven Design: organize durable knowledge a
 1. Inspect the current docs state.
    - Read `AGENTS.md`, `docs/DOCS.md`, and `docs/index.md` if they exist.
    - If `docs/index.md` exists, read relevant `docs/<domain>/index.md` files before editing leaf docs.
+   - Treat `docs/` as initialized only when compatible `docs/DOCS.md` (Project Knowledge Protocol) and `docs/index.md` files exist.
    - Detect whether the repository already has a docs convention and preserve it when possible.
 
 2. Use the canonical layout in [references/docs-layout.md](./references/docs-layout.md).
@@ -38,7 +39,7 @@ This docs system borrows from Domain-Driven Design: organize durable knowledge a
 <!-- BEGIN:docs-system-rules -->
 # This is NOT the docs system you know
 
-This repository maintains project-specific knowledge and conventions in `docs/`; start with `docs/index.md` and `docs/DOCS.md`, then follow links into `docs/<domain>/index.md` and `docs/<domain>/<subdomain>.md` as needed, treat `docs/` as the source of durable non-obvious project practices, and follow [`skills/project-docs-system/SKILL.md`](skills/project-docs-system/SKILL.md) for how to initialize, maintain, and update this docs system.
+This repository maintains project-specific knowledge and conventions in `docs/`; start with `docs/index.md` and `docs/DOCS.md`, then follow links into `docs/<domain>/index.md` and `docs/<domain>/<subdomain>.md` as needed, treat `docs/` as the source of durable non-obvious project practices, and use the installed `$project-docs-system` skill when initializing, maintaining, or updating this docs system.
 <!-- END:docs-system-rules -->
 ```
 

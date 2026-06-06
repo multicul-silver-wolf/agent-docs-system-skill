@@ -33,7 +33,9 @@ The docs system uses a two-level domain structure with index maps and scoped pro
 - **`docs/index.md`**: Top-level map of first-level domains.
 - **`docs/<domain>/DOCS.md`**: Domain protocol for language, conventions, and boundaries shared by multiple subdomain docs.
 - **`docs/<domain>/index.md`**: Map of second-level docs inside one domain.
-- **`docs/<domain>/<subdomain>.md`**: Durable docs for one subdomain, with an optional `Domain Language` section for confirmed local terms.
+- **`docs/<domain>/<subdomain>.md`**: Durable docs for one subdomain, with optional `Domain Language` and `Decision Records` sections for confirmed local terms and scoped decisions.
+
+Decision records stay lightweight and lazy: add them only for decisions that are hard to reverse, surprising without context, and based on a real trade-off. The default record is one bullet with `Status`, `Context`, `Decision`, and `Consequences`.
 
 ## Usage
 
@@ -43,6 +45,7 @@ Trigger the skill in your chat:
 - *"Update `docs/DOCS.md` with our global API naming conventions"*
 - *"Audit `docs/` and fix missing index links"*
 - *"Add a new subdomain doc under `docs/frontend/` and update maps"*
+- *"Record why this subdomain chose a non-obvious runtime boundary"*
 
 ---
 

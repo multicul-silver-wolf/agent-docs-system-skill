@@ -43,7 +43,7 @@ Every docs document should start with frontmatter. When creating a new system, u
 ---
 title: Example Title
 description: One-line description of what this docs file covers.
-updateAt: 2026-03-24
+updateAt: YYYY-MM-DD
 ---
 ```
 

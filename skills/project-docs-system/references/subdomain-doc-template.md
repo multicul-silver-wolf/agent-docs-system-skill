@@ -1,7 +1,7 @@
 ---
 title: Subdomain Doc Template
 description: Reference template for creating a subdomain doc file under docs/<domain>/.
-updateAt: 2026-03-24
+updateAt: YYYY-MM-DD
 ---
 
 # Subdomain Doc Template

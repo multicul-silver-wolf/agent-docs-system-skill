@@ -12,6 +12,7 @@ EOF
 
 error_count=0
 warning_count=0
+script_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)"
 
 error() {
   printf 'ERROR: %s\n' "$*" >&2
@@ -139,6 +140,15 @@ while IFS= read -r domain_dir; do
     fi
   done < <(find "$domain_dir" -maxdepth 1 -type f -name '*.md' -print | sort)
 done < <(find "$docs_dir" -mindepth 1 -maxdepth 1 -type d -print | sort)
+
+if [ "$error_count" -eq 0 ]; then
+  catalog_script="$script_dir/update-docs-catalog.sh"
+  if [ ! -x "$catalog_script" ]; then
+    error "missing executable docs catalog updater: $catalog_script"
+  elif ! "$catalog_script" --check "$target_abs"; then
+    error "generated docs catalog check failed"
+  fi
+fi
 
 if [ "$error_count" -gt 0 ]; then
   printf 'Docs system verification failed: %d error(s), %d warning(s).\n' "$error_count" "$warning_count" >&2

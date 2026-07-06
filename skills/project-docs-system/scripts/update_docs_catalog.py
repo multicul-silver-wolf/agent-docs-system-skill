@@ -162,14 +162,14 @@ def index_files(docs_dir: Path) -> list[Path]:
     if not root_index.is_file():
         raise CatalogError(f"missing required file: {root_index}")
 
-    indexes = [root_index]
-    for child in sorted(docs_dir.iterdir(), key=lambda item: item.name):
-        if not child.is_dir() or child.name.startswith("."):
+    indexes: list[Path] = []
+    for path in docs_dir.rglob("index.md"):
+        relative_parts = path.relative_to(docs_dir).parts
+        if any(part.startswith(".") for part in relative_parts):
             continue
-        domain_index = child / "index.md"
-        if domain_index.is_file():
-            indexes.append(domain_index)
-    return indexes
+        indexes.append(path)
+
+    return sorted(indexes, key=lambda item: item.relative_to(docs_dir).as_posix())
 
 
 def expected_content(index_path: Path) -> str:

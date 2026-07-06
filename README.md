@@ -26,7 +26,7 @@ openclaw install ./agent-docs-system-skill/skills/project-docs-system
 
 ## System Architecture
 
-The docs system uses a two-level domain structure with index maps and scoped protocol files:
+The docs system starts with a two-level domain structure and allows deeper indexed docs scopes when a project needs them:
 
 - **`AGENTS.md`**: Agent entry point. Adds docs-system rules only after `docs/` is initialized.
 - **`docs/DOCS.md`**: Repository knowledge protocol for cross-domain language, collaboration conventions, and boundary principles.
@@ -34,6 +34,8 @@ The docs system uses a two-level domain structure with index maps and scoped pro
 - **`docs/<domain>/DOCS.md`**: Domain protocol for language, conventions, and boundaries shared by multiple subdomain docs.
 - **`docs/<domain>/index.md`**: Map of second-level docs inside one domain.
 - **`docs/<domain>/<subdomain>.md`**: Durable docs for one subdomain, with optional `Domain Language` and `Decision Records` sections for confirmed local terms and scoped decisions.
+
+Directories under `docs/` that only contain resources, such as images, are outside docs layout validation. Deeper Markdown docs are valid when each docs scope has an `index.md` that links its direct docs files and child docs scopes.
 
 Decision records stay lightweight and lazy: add them only for decisions that are hard to reverse, surprising without context, and based on a real trade-off. The default record is one bullet with `Status`, `Context`, `Decision`, and `Consequences`.
 

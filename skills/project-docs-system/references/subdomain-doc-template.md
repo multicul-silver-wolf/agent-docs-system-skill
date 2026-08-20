@@ -12,7 +12,7 @@ updateAt: YYYY-MM-DD
 - Replace placeholder wording with concrete, durable project knowledge.
 - Keep the scope limited to one subdomain, module surface, workflow, or route cluster.
 - Delete the `Domain Language` section when no confirmed project-specific terms are needed.
-- Delete the `Decision Records` section when this doc has no decisions that are hard to reverse, surprising without context, and based on real trade-offs.
+- Keep this living doc authoritative for current behavior. When qualifying decision rationale exists, add a link to an adjacent same-name `.adr.md` companion created from [adr-companion-template.md](./adr-companion-template.md).
 - Move knowledge shared by multiple subdomain docs into `docs/<domain>/DOCS.md`; move cross-domain knowledge up into `docs/DOCS.md`.
 
 ## Scope
@@ -32,17 +32,15 @@ updateAt: YYYY-MM-DD
 - Record user corrections, conventions, ownership boundaries, and architectural expectations.
 - Prefer short bullets with concrete references when that improves reuse.
 
-## Decision Records
+## Decision History
 
-- **YYYY-MM-DD short-decision-slug**: One-sentence summary of the scoped decision.
-  Status: One of `Proposed`, `Accepted`, `Rejected`, `Deprecated`, or `Superseded by YYYY-MM-DD short-decision-slug`.
-  Context: Why this decision came up.
-  Decision: The chosen path.
-  Consequences: The main cost, constraint, or follow-up.
+- When a companion exists, link it as `[Decision rationale](./<subdomain>.adr.md)`.
+- Delete this section when no ADR companion exists.
 
 ## Update Triggers
 
 - Update this file when the user corrects the agent about this subdomain.
 - Update this file when the subdomain structure, conventions, responsibilities, or key files change.
 - Update this file when a new recurring rule or durable insight appears in this subdomain.
-- Update this file when a scoped decision is proposed, accepted, rejected, deprecated, or superseded.
+- Update the ADR companion when a scoped decision is proposed, accepted, rejected, deprecated, or superseded.
+- Update this living doc only when current implemented behavior changes.

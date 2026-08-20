@@ -33,11 +33,11 @@ The docs system starts with a two-level domain structure and allows deeper index
 - **`docs/index.md`**: Top-level map of first-level domains.
 - **`docs/<domain>/DOCS.md`**: Domain protocol for language, conventions, and boundaries shared by multiple subdomain docs.
 - **`docs/<domain>/index.md`**: Map of second-level docs inside one domain.
-- **`docs/<domain>/<subdomain>.md`**: Durable docs for one subdomain, with optional `Domain Language` and `Decision Records` sections for confirmed local terms and scoped decisions.
+- **`docs/<domain>/<subdomain>.md`**: Current durable truth for one subdomain, with an optional adjacent `<subdomain>.adr.md` companion for scoped decision rationale.
 
 Directories under `docs/` that only contain resources, such as images, are outside docs layout validation. Deeper Markdown docs are valid when each docs scope has an `index.md` that links its direct docs files and child docs scopes.
 
-Decision records stay lightweight and lazy: add them only for decisions that are hard to reverse, surprising without context, and based on a real trade-off. The default record is one bullet with `Status`, `Context`, `Decision`, and `Consequences`.
+Decision records stay lightweight and lazy: add an adjacent same-name `.adr.md` companion only for decisions that are hard to reverse, surprising without context, and based on a real trade-off. Living docs describe what is true now; ADR companions preserve what was decided and why. The verifier recognizes dated heading and dated-list history styles used by existing customizations, warns on missing bidirectional links without breaking customized repositories, omits ADR companions from generated catalogs, and emits a non-blocking cohesion warning above 500 author-maintained lines (generated catalog blocks are excluded).
 
 ## Usage
 

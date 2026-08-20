@@ -104,6 +104,8 @@ def catalog_docs(base_dir: Path, index_path: Path) -> list[Path]:
             continue
         if path == index_path:
             continue
+        if path.name.endswith(".adr.md"):
+            continue
         docs.append(path)
     return sorted(docs, key=lambda item: item.relative_to(base_dir).as_posix())
 

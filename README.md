@@ -33,7 +33,7 @@ The docs system starts with a two-level domain structure and allows deeper index
 - **`docs/index.md`**: Top-level map of first-level domains.
 - **`docs/<domain>/DOCS.md`**: Domain protocol for language, conventions, and boundaries shared by multiple subdomain docs.
 - **`docs/<domain>/index.md`**: Map of second-level docs inside one domain.
-- **`docs/<domain>/<subdomain>.md`**: Durable docs for one subdomain, with optional `Domain Language` and `Decision Records` sections for confirmed local terms and scoped decisions.
+- **`docs/<domain>/<subdomain>.md`**: Durable docs for one subdomain, with optional `Domain Language` for confirmed local terms and an adjacent `<subdomain>.adr.md` for decision history.
 
 Directories under `docs/` that only contain resources, such as images, are outside docs layout validation. Deeper Markdown docs are valid when each docs scope has an `index.md` that links its direct docs files and child docs scopes.
 
@@ -53,3 +53,9 @@ Trigger the skill in your chat:
 
 Built by [Silver Wolf](https://github.com/multicul-silver-wolf) and [Sawana](https://github.com/waitlistSawana).  
 Inspired by the **Aether Editing** philosophy.
+
+## Keeping Documents Focused
+
+Keep current knowledge in the living document and move decision history into an adjacent `<stem>.adr.md`. Link both directions; companions stay out of indexes and generated catalogs so readers load history only when needed.
+
+The verifier warns above 500 author-maintained lines, excluding generated catalog blocks. Use this reminder to extract history, split mixed responsibilities, or trim unnecessary reading context. It does not fail verification or require mechanical splitting.

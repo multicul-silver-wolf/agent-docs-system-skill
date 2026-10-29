@@ -189,8 +189,8 @@ def check_catalog(target: DocsTarget) -> int:
         return 0
 
     script_dir = Path(__file__).resolve().parent
-    update_script = script_dir / "update-docs-catalog.sh"
-    verify_script = script_dir / "verify-docs-system.sh"
+    update_script = script_dir / "update_docs_catalog.py"
+    verify_script = script_dir / "verify_docs_system.py"
     for path in stale:
         print(f"ERROR: generated docs catalog is stale: {path}", file=sys.stderr)
     print(file=sys.stderr)
@@ -199,9 +199,15 @@ def check_catalog(target: DocsTarget) -> int:
         file=sys.stderr,
     )
     print("Run:", file=sys.stderr)
-    print(f"  {update_script} {target.repo_root}", file=sys.stderr)
+    print(
+        f'  uv run --isolated python -X utf8 "{update_script}" "{target.repo_root}"',
+        file=sys.stderr,
+    )
     print("Then rerun:", file=sys.stderr)
-    print(f"  {verify_script} {target.repo_root}", file=sys.stderr)
+    print(
+        f'  uv run --isolated python -X utf8 "{verify_script}" "{target.repo_root}"',
+        file=sys.stderr,
+    )
     return 1
 
 

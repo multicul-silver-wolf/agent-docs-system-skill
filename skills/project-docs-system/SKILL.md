@@ -80,5 +80,5 @@ This repository maintains project-specific knowledge and conventions in `docs/`;
 - Confirm `docs/index.md` covers every first-level Markdown docs domain.
 - Confirm each docs scope `index.md` covers its direct living Markdown docs files and child docs scope indexes; companion ADRs are excluded.
 - Confirm each companion has a living document and relative Markdown links in both directions.
-- When shell access is available, run the bundled [scripts/verify-docs-system.sh](./scripts/verify-docs-system.sh) with the target repo root or `docs/` directory to verify the docs structure.
+- When shell access is available, run the bundled [cross-platform verification helper](./references/docs-layout.md#verification-helper) with the target repo root or `docs/` directory to verify the docs structure.
 - Summarize what was created or updated and why.

@@ -197,4 +197,12 @@ Also update map files whenever docs files or docs directories change:
 
 ## Verification Helper
 
-When shell access is available and structure has changed, optionally run the bundled [scripts/verify-docs-system.sh](../scripts/verify-docs-system.sh) with the target repo root or `docs/` directory to verify the minimum docs-system contract.
+The [verifier](../scripts/verify_docs_system.py), [catalog updater](../scripts/update_docs_catalog.py), and [behavior tests](../scripts/test_docs_system.py) use Python's standard library. Run them through `uv` on Windows, macOS, or Linux; the verifier checks catalogs in the same process. Use `-X utf8` so paths and diagnostics retain the same encoding across shells.
+
+```sh
+uv run --isolated python -X utf8 "<skill-dir>/scripts/verify_docs_system.py" "<repo-root-or-docs-dir>"
+uv run --isolated python -X utf8 "<skill-dir>/scripts/update_docs_catalog.py" "<repo-root-or-docs-dir>"
+uv run --isolated python -X utf8 "<skill-dir>/scripts/test_docs_system.py"
+```
+
+The existing `.sh` entrypoints remain thin launchers for Bash callers on macOS and Linux. On Windows, use the Python commands directly from PowerShell to avoid Git Bash subprocess overhead. Both entrypoints run the same checks and preserve nonzero exit codes on failure.

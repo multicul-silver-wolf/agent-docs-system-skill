@@ -49,6 +49,18 @@ Trigger the skill in your chat:
 - *"Add a new subdomain doc under `docs/frontend/` and update maps"*
 - *"Record why this subdomain chose a non-obvious runtime boundary"*
 
+## Running the tools
+
+The verifier and catalog updater share a Python implementation for Windows, macOS, and Linux. With [uv](https://docs.astral.sh/uv/) installed, run these commands from the repository root:
+
+```sh
+uv run --isolated python -X utf8 skills/project-docs-system/scripts/verify_docs_system.py "<target-repo-or-docs-dir>"
+uv run --isolated python -X utf8 skills/project-docs-system/scripts/update_docs_catalog.py "<target-repo-or-docs-dir>"
+uv run --isolated python -X utf8 skills/project-docs-system/scripts/test_docs_system.py
+```
+
+On Windows, run these commands directly in PowerShell. Existing `.sh` entrypoints remain compatible Bash launchers. Both use the same rules and failure exit codes.
+
 ---
 
 Built by [Silver Wolf](https://github.com/multicul-silver-wolf) and [Sawana](https://github.com/waitlistSawana).  
